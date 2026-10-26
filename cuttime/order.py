@@ -58,6 +58,22 @@ def chain_groups(order, g, start):
     return out
 
 
+def lite_ops(f, feeds):
+    """Same ops as path.plan for one feature, with each cut reduced to its first and last point (all that rapids and tool changes depend on)."""
+    ops = [o for o in path.plan({"features": [f]}, *feeds) if o["kind"] != "toolchange"]
+    return [dict(o, poly=[o["poly"][0], o["poly"][-1]]) if o["kind"] == "cut" else o for o in ops]
+
+
+def lite_sequence(seq, lite):
+    ops, tool = [], None
+    for f in seq:
+        if path.tool_of(f) != tool:
+            ops.append({"kind": "toolchange"})
+            tool = path.tool_of(f)
+        ops += lite[id(f)]
+    return ops
+
+
 def sequence(strategy, feats, profile, tool_change, feeds):
     if strategy == "CAD tree order":
         seq = list(feats)
@@ -69,9 +85,10 @@ def sequence(strategy, feats, profile, tool_change, feeds):
             seq = chain_groups(list(g), g, (0.0, 0.0))
         else:
             best = None
+            lite = {id(f): lite_ops(f, feeds) for f in feats + [profile]}
             for order in itertools.permutations(g):
                 s = chain_groups(order, g, (0.0, 0.0))
-                t = path.fixed_time(path.plan({"features": s + [profile]}, *feeds), tool_change)
+                t = path.fixed_time(lite_sequence(s + [profile], lite), tool_change)
                 if best is None or t < best[0]:
                     best = (t, s)
             seq = best[1]

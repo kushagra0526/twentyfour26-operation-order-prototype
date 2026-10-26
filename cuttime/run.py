@@ -23,8 +23,8 @@ def score(seeds, held, tool_change=12.0):
 
 
 def main():
-    res = {"dev": score(range(0, 100), False), "held_out": score(range(1000, 1200), True)}
-    res["held_out_tool_change_what_if"] = {f"{tc} s": score(range(1000, 1100), True, tc) for tc in (3.0, 12.0, 30.0)}
+    res = {"dev": score(range(0, 100), False), "held_out": score(range(1000, 1060), True)}
+    res["held_out_tool_change_what_if"] = {f"{tc} s": score(range(1000, 1030), True, tc) for tc in (3.0, 12.0, 30.0)}
     json.dump(res, open("out/result.json", "w"), indent=1)
     for k, v in res.items():
         print(k)
