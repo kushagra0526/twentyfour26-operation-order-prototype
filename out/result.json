@@ -1,0 +1,134 @@
+{
+ "dev": {
+  "CAD tree order": {
+   "mean_job_minutes": 4.91,
+   "tool_changes": 8.6,
+   "time_saved_vs_CAD_order_pct": 0.0,
+   "jobs_slower_than_CAD_order": 0
+  },
+  "group by tool": {
+   "mean_job_minutes": 4.3,
+   "tool_changes": 5.5,
+   "time_saved_vs_CAD_order_pct": 12.4,
+   "jobs_slower_than_CAD_order": 2
+  },
+  "group by tool + nearest next feature": {
+   "mean_job_minutes": 4.3,
+   "tool_changes": 5.5,
+   "time_saved_vs_CAD_order_pct": 12.5,
+   "jobs_slower_than_CAD_order": 1
+  },
+  "best tool order (all permutations) + nearest next feature": {
+   "mean_job_minutes": 4.12,
+   "tool_changes": 4.8,
+   "time_saved_vs_CAD_order_pct": 16.1,
+   "jobs_slower_than_CAD_order": 0
+  }
+ },
+ "held_out": {
+  "CAD tree order": {
+   "mean_job_minutes": 6.25,
+   "tool_changes": 13.0,
+   "time_saved_vs_CAD_order_pct": 0.0,
+   "jobs_slower_than_CAD_order": 0
+  },
+  "group by tool": {
+   "mean_job_minutes": 5.09,
+   "tool_changes": 7.2,
+   "time_saved_vs_CAD_order_pct": 18.6,
+   "jobs_slower_than_CAD_order": 0
+  },
+  "group by tool + nearest next feature": {
+   "mean_job_minutes": 5.07,
+   "tool_changes": 7.2,
+   "time_saved_vs_CAD_order_pct": 18.8,
+   "jobs_slower_than_CAD_order": 0
+  },
+  "best tool order (all permutations) + nearest next feature": {
+   "mean_job_minutes": 4.93,
+   "tool_changes": 6.6,
+   "time_saved_vs_CAD_order_pct": 21.2,
+   "jobs_slower_than_CAD_order": 0
+  }
+ },
+ "held_out_tool_change_what_if": {
+  "3.0 s": {
+   "CAD tree order": {
+    "mean_job_minutes": 4.37,
+    "tool_changes": 13.0,
+    "time_saved_vs_CAD_order_pct": 0.0,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "group by tool": {
+    "mean_job_minutes": 4.08,
+    "tool_changes": 7.2,
+    "time_saved_vs_CAD_order_pct": 6.6,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "group by tool + nearest next feature": {
+    "mean_job_minutes": 4.07,
+    "tool_changes": 7.2,
+    "time_saved_vs_CAD_order_pct": 7.0,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "best tool order (all permutations) + nearest next feature": {
+    "mean_job_minutes": 4.0,
+    "tool_changes": 6.6,
+    "time_saved_vs_CAD_order_pct": 8.5,
+    "jobs_slower_than_CAD_order": 0
+   }
+  },
+  "12.0 s": {
+   "CAD tree order": {
+    "mean_job_minutes": 6.33,
+    "tool_changes": 13.0,
+    "time_saved_vs_CAD_order_pct": 0.0,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "group by tool": {
+    "mean_job_minutes": 5.16,
+    "tool_changes": 7.2,
+    "time_saved_vs_CAD_order_pct": 18.4,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "group by tool + nearest next feature": {
+    "mean_job_minutes": 5.15,
+    "tool_changes": 7.2,
+    "time_saved_vs_CAD_order_pct": 18.7,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "best tool order (all permutations) + nearest next feature": {
+    "mean_job_minutes": 4.99,
+    "tool_changes": 6.6,
+    "time_saved_vs_CAD_order_pct": 21.2,
+    "jobs_slower_than_CAD_order": 0
+   }
+  },
+  "30.0 s": {
+   "CAD tree order": {
+    "mean_job_minutes": 10.24,
+    "tool_changes": 13.0,
+    "time_saved_vs_CAD_order_pct": 0.0,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "group by tool": {
+    "mean_job_minutes": 7.32,
+    "tool_changes": 7.2,
+    "time_saved_vs_CAD_order_pct": 28.5,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "group by tool + nearest next feature": {
+    "mean_job_minutes": 7.31,
+    "tool_changes": 7.2,
+    "time_saved_vs_CAD_order_pct": 28.6,
+    "jobs_slower_than_CAD_order": 0
+   },
+   "best tool order (all permutations) + nearest next feature": {
+    "mean_job_minutes": 6.96,
+    "tool_changes": 6.6,
+    "time_saved_vs_CAD_order_pct": 32.0,
+    "jobs_slower_than_CAD_order": 0
+   }
+  }
+ }
+}
